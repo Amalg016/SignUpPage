@@ -28,7 +28,7 @@ public class SqlCommand {
 		
 	}
 	
-	public static boolean addUser(User user) throws SQLException {
+	public static void addUser(User user) throws SQLException {
 		
 		String query = "insert into scramUsers(name,email,dob,password,mob) values(?,?,?,?,?)";
 		
@@ -41,6 +41,5 @@ public class SqlCommand {
 		prepst.executeUpdate();
 		
 //		System.out.println("\nRow inserted.");
-		return true;
 	}
 }

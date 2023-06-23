@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Sign up</title>
+	<meta charset="UTF-8">
+	<title>Sign up</title>
+	
 </head>
 <body>
 	<form action="signup" method="GET">
@@ -26,5 +27,19 @@
         	Already have an account? <a href="index.html" > Sign In</a>
        	</p>
      </form>
+     <script>
+	    // retrieve the attribute value
+	    /* var alertMessage = '<%= ' + 'request.getAttribute("alertMessage")' + ' %>'; */
+	    let link = document.querySelector('#js');
+        if (link) {
+            let alertMessage = link.getAttribute('alertMessage');
+            console.log(alertMessage);
+        }
+	
+	    // display the alert message using JavaScript
+	    if (alertMessage && alertMessage.trim().length > 0) { 
+        	alert(alertMessage); 
+    	}
+	</script>
 </body>
 </html>
