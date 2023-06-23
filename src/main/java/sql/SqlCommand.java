@@ -10,7 +10,7 @@ public class SqlCommand {
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");								//loading and registering driver
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/scram", "root", "pass");
+			con = DriverManager.getConnection(Constants.path, Constants.username, Constants.pass);
 //			System.out.println("\nConnection established.\n");
 //			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 //			rs = st.executeQuery("Select * from scramUsers");
