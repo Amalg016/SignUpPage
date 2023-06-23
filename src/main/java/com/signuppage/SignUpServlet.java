@@ -22,7 +22,7 @@ public class SignUpServlet extends HttpServlet{
 		
 		try {
 			boolean bool = SqlCommand.addUser(newUser);
-			res.getWriter().println("The result is: " + bool );
+			res.getWriter().println("The result is: " + bool + "Inserted!");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
