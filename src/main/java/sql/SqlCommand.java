@@ -3,26 +3,32 @@ package sql;
 import java.sql.*;
 
 public class SqlCommand {
-	Connection con = null;
+	static Connection con = null;
 	static Statement st;
 	static ResultSet rs;
 
-//	static {
-//		
-//	}
-	
-	public boolean addUser(User user) throws SQLException {
-		System.out.println("\nConnection.\n");
+	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");								//loading and registering driver
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/scram", "root", "pass");
-			System.out.println("\nConnection established.\n");
-			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			rs = st.executeQuery("Select * from scramUsers");
+//			System.out.println("\nConnection established.\n");
+//			st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+//			rs = st.executeQuery("Select * from scramUsers");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		if(con == null) {
+			System.out.println("Connection is null.");
+		}
+		else {
+			System.out.println("Connection established.");
+		}
+		
+	}
+	
+	public static boolean addUser(User user) throws SQLException {
 		
 		String query = "insert into scramUsers values(?,?,?,?,?)";
 		

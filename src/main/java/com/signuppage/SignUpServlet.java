@@ -21,8 +21,7 @@ public class SignUpServlet extends HttpServlet{
 		User newUser = new User(name,email,dob,pass,mob);
 		
 		try {
-			SqlCommand sql = new SqlCommand();
-			boolean bool = sql.addUser(newUser);
+			boolean bool = SqlCommand.addUser(newUser);
 			res.getWriter().println("The result is: " + bool );
 			
 		} catch (SQLException e) {
