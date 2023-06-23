@@ -1,3 +1,5 @@
 /build/
 .classpath
 src/main/java/sql/Constants.java
+.classpath
+src/main/java/sql/Constants.java
