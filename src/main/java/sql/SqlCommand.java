@@ -30,7 +30,7 @@ public class SqlCommand {
 	
 	public static boolean addUser(User user) throws SQLException {
 		
-		String query = "insert into scramUsers values(?,?,?,?,?)";
+		String query = "insert into scramUsers(name,email,dob,password,mob) values(?,?,?,?,?)";
 		
 		PreparedStatement prepst = con.prepareStatement(query);
 		prepst.setString(1, user.uname);
@@ -40,7 +40,7 @@ public class SqlCommand {
 		prepst.setInt(5, user.umob);
 		prepst.executeUpdate();
 		
-		System.out.println("\nRow inserted.");
+//		System.out.println("\nRow inserted.");
 		return true;
 	}
 }
