@@ -9,12 +9,10 @@ body{
 	align-items:center;
 	height:100vh;
 }
+
 input{
     font-family:cursive;
 }
-
-
-
 
 .container {
   width: 400px;

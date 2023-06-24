@@ -21,7 +21,6 @@ public class SignInServlet extends HttpServlet{
 			User user=SqlCommand.FetchUser(email, pass);
 			
 			if(user != null) {
-//				 String json = new Gson().toJson(user);
 				    
 				String json = "{ \"uname\": \"" + user.uname + "\", "
 		                + "\"uemail\": \"" + user.uemail + "\", "
@@ -33,8 +32,12 @@ public class SignInServlet extends HttpServlet{
 				res.setContentType("application/json");
 				
 				// send the JSON string back to the client as a response
-				res.getWriter().write(json);
-			    res.sendRedirect("HomePage.html");
+				//res.getWriter().write(json);
+			    req.setAttribute("jsonData", json);
+			    //System.out.println(req.getAttribute("jsonData"));
+				//res.sendRedirect("HomePage.jsp");
+			    RequestDispatcher dispatcher = req.getRequestDispatcher("HomePage.jsp");
+				dispatcher.forward(req, res);
 			}
 			else {
 				//req.logout();
@@ -42,7 +45,7 @@ public class SignInServlet extends HttpServlet{
 				req.setAttribute("message","shit");
 //				RequestDispatcher dispatcher = req.getRequestDispatcher("login");
 //			    dispatcher.forward(req, res);
-				res.sendRedirect("index.html");
+			//	res.sendRedirect("index.html");
 				System.out.println("shit!!");				
 			}
 		} 
