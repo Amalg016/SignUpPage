@@ -29,10 +29,11 @@ public class SignUpServlet extends HttpServlet{
 			SqlCommand.addUser(newUser);
 
 		    // forward the request object to the HTML page
-		    RequestDispatcher dispatcher = req.getRequestDispatcher("index.html");
-		    dispatcher.forward(req, res);
-		    res.sendRedirect("index.html");
-		    req.setAttribute("alertMessage", "This is an alert message!");
+		  //  RequestDispatcher dispatcher = req.getRequestDispatcher("login");
+		  //  dispatcher.forward(req, res);
+		   res.sendRedirect("login");
+		   
+		  //  req.setAttribute("alertMessage", "This is an alert message!");
 //			res.getWriter().println("The result is: " + bool + "Inserted!");
 			
 		} 

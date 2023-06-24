@@ -3,6 +3,7 @@ package com.signuppage;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,26 +22,34 @@ public class SignInServlet extends HttpServlet{
 			
 			if(user != null) {
 //				 String json = new Gson().toJson(user);
-//				    
-				String json = "{ \"name\": \"" + user.uname + "\", "
-		                + "\"email\": \"" + user.uemail + "\", "
-		                + "\"dob\": \"" + user.udob + "\", "
-		                + "\"password\": \"" + user.upass + "\", "
-		                + "\"mobile\": \"" + user.umob + "\" }";
+				    
+				String json = "{ \"uname\": \"" + user.uname + "\", "
+		                + "\"uemail\": \"" + user.uemail + "\", "
+		                + "\"udob\": \"" + user.udob + "\", "
+		                + "\"upass\": \"" + user.upass + "\", "
+		                + "\"umob\": \"" + user.umob + "\" }";
 				
 				// set the response type to JSON
 				res.setContentType("application/json");
 				
 				// send the JSON string back to the client as a response
 				res.getWriter().write(json);
+			    res.sendRedirect("HomePage.html");
 			}
 			else {
-				req.logout();
-				System.out.println("shit!!");
+				//req.logout();
+
+				req.setAttribute("message","shit");
+//				RequestDispatcher dispatcher = req.getRequestDispatcher("login");
+//			    dispatcher.forward(req, res);
+				res.sendRedirect("index.html");
+				System.out.println("shit!!");				
 			}
-		} catch (SQLException e) {
+		} 
+        catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+	    }
+	
 	}
 }
