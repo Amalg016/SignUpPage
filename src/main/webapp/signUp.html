@@ -6,7 +6,7 @@
 	
 </head>
 <body>
-	<form action="signup" method="GET">
+	<form action="signup" method="POST">
 		<label for="name">Name:</label>
         <input id="name" name="name" required>
         
@@ -37,7 +37,7 @@
         }
 	
 	    // display the alert message using JavaScript
-	    if (alertMessage && alertMessage.trim().length > 0) { 
+	    if (alertMessage ) { 
         	alert(alertMessage); 
     	}
 	</script>

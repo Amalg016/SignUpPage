@@ -14,9 +14,17 @@
 	<servlet-name>signup</servlet-name>
 	<servlet-class>com.signuppage.SignUpServlet</servlet-class>
 </servlet>
+  <servlet>
+	<servlet-name>signin</servlet-name>
+	<servlet-class>com.signuppage.SignInServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>signup</servlet-name>
 	<url-pattern>/signup</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>signin</servlet-name>
+	<url-pattern>/signin</url-pattern>
 </servlet-mapping>
 </web-app>
