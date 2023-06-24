@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sign up</title>
-	
+	  <link href="style.css" rel="stylesheet">
 </head>
 <body>
+   <div class="container">
 	<form action="signup" method="POST">
 		<label for="name">Name:</label>
         <input id="name" name="name" required>
@@ -27,11 +28,12 @@
         	Already have an account? <a href="index.html" > Sign In</a>
        	</p>
      </form>
+   </div>
      <script>
 	    // retrieve the attribute value
 	    /* var alertMessage = '<%= ' + 'request.getAttribute("alertMessage")' + ' %>'; */
-	    let link = document.querySelector('#js');
-        if (link) {
+	   
+     /*    if (link) {
             let alertMessage = link.getAttribute('alertMessage');
             console.log(alertMessage);
         }
@@ -39,7 +41,7 @@
 	    // display the alert message using JavaScript
 	    if (alertMessage ) { 
         	alert(alertMessage); 
-    	}
+    	} */
 	</script>
 </body>
 </html>
