@@ -2,6 +2,7 @@ package com.signuppage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -19,23 +20,26 @@ public class SignUpServlet extends HttpServlet{
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String dob = req.getParameter("dob");
-		int mob = Integer.parseInt(req.getParameter("mob"));
+		long mob = Long.parseLong(req.getParameter("mob"));
 		String pass = req.getParameter("password");
 		
 		User newUser = new User(name,email,dob,pass,mob);
 		
 		try {
 			SqlCommand.addUser(newUser);
-			
-			req.setAttribute("alertMessage", "This is an alert message!");
 
 		    // forward the request object to the HTML page
 		    RequestDispatcher dispatcher = req.getRequestDispatcher("index.html");
 		    dispatcher.forward(req, res);
-			res.sendRedirect("index.html");
+		    res.sendRedirect("index.html");
+		    req.setAttribute("alertMessage", "This is an alert message!");
 //			res.getWriter().println("The result is: " + bool + "Inserted!");
 			
-		} catch (SQLException e) {
+		} 
+		catch(SQLIntegrityConstraintViolationException E) {
+			
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		

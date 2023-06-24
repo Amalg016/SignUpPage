@@ -1,10 +1,10 @@
 package sql;
 
 public class User{
-	String uname,uemail,udob,upass;
-	int umob;
+	public String uname,uemail,udob,upass;
+	public long umob;
 	
-	public User(String uname, String uemail, String udob, String upass, int umob) {
+	public User(String uname, String uemail, String udob, String upass, long umob) {
 		this.uname = uname;
 		this.uemail = uemail;
 		this.udob = udob;
