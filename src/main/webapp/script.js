@@ -12,6 +12,8 @@ var UserDetails=JSON.parse(jsonData);
 
 NameLabel.textContent=UserDetails.uname;
 
+
+
 // jsonData='<%= request.getAttribute("jsonData") %>';
 // console.log(jsonData);
 // var userDetails=JSON.parse(jsonData);

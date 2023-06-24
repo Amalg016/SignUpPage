@@ -12,7 +12,8 @@
 	     
 	        <label for="password">Password:</label>
 	        <input type="password" id="password" name="password" required>
-	     
+	        <input type="checkbox" id="show-password"><span>Toggle password</span>
+	         <br>
 	        <input type="submit" value="SignIn" >
 	        <p>
 	        	New user? <a href="signUp.html" > Sign Up</a>
@@ -23,6 +24,22 @@
      
      
      	<script>
+     	function showPassword() {
+     		  var passwordInput = document.getElementById("password");
+     		  var showPasswordCheckbox = document.getElementById("show-password");
+     		  
+     		  if (showPasswordCheckbox.checked) {
+     		    passwordInput.type = "text";
+     		    
+     		  } else {
+     		    passwordInput.type = "password";
+     		    
+     		  }
+     		}
+
+     		var showPasswordCheckbox = document.getElementById("show-password");
+     		showPasswordCheckbox.addEventListener("change", showPassword);
+     	
         /* 	window.addEventListener("DOMContentLoaded",function(){
      		const urlParams=new URLSearchParams(window.location.search);
      		console.log(urlParams);
