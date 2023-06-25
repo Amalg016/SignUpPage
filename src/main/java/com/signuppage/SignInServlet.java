@@ -41,8 +41,7 @@ public class SignInServlet extends HttpServlet{
 			}
 			else {
 				//req.logout();
-
-				req.setAttribute("message","shit");
+				req.setAttribute("message","Incorrect email/password!");
 //				RequestDispatcher dispatcher = req.getRequestDispatcher("login");
 //			    dispatcher.forward(req, res);
 			//	res.sendRedirect("index.html");
