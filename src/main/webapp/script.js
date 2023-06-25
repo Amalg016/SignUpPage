@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 let jsonData;
 let url="http://localhost:8080/SignUpPage/signin"
@@ -12,6 +9,10 @@ var UserDetails=JSON.parse(jsonData);
 
 NameLabel.textContent=UserDetails.uname;
 
+document.getElementById("editname").value = UserDetails.uname;
+document.getElementById("editemail").value = UserDetails.uemail;
+document.getElementById("editdob").value = UserDetails.udob;
+document.getElementById("editmob").value = UserDetails.umob;
 
 
 // jsonData='<%= request.getAttribute("jsonData") %>';
