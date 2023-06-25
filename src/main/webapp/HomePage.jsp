@@ -7,7 +7,7 @@
 </head>
 <body>
 	<header>
-		<h1>Welcome 
+		<h1>Welcome back,
 			<label id="name">ee </label>
 			<input type="hidden" id="jsonData" value='<%= request.getAttribute("jsonData") %>'>
 		</h1>
