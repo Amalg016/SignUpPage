@@ -28,12 +28,18 @@
 	        <label for="editmob"> Mobile Number: </label>
 	        <input type="tel" id="editmob" name="mob" required>
 	     
-	        <label for="editpass">Password: </label>
-	        <input type="password" id="editpass" name="password" required>
+	        <label for="newpass">New Password: </label>
+	        <input type="password" id="newpass" name="password" required>
+	        
+	        <label for="oldpass">Old Password: </label>
+	        <input type="password" id="oldpass" name="password" required>
 	     
 	        <input type="submit" value="Update profile" >
 	        <script src="script.js"></script> 
 	     </form>
    </div>
+   <span style="position:absolute;top:20px;left:98%;transform: translate(-98%, 0);">
+   	<a href="index.html">Logout</a>
+   </span>
 </body>
 </html>
